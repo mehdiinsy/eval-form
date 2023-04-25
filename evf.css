@@ -1,0 +1,19 @@
+form{
+    justify-content: center;
+    display: flex;    
+}
+
+label{
+    float: left;
+}
+
+input{
+    float: right;
+}
+output{
+    float: right;
+}
+select{
+    float: right;
+}
+
