@@ -11,7 +11,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form>
+    <form method="post" action="postform.html">
         <fieldset>
             <legend><h2>Formulaire d'inscription</h2></legend>
             
@@ -21,14 +21,14 @@
                 <option value="Mme">Mme</option>
                 </select><br><br><br><br>
 
-            <label for="nom">nom</label>
-            <input required="required" class="n" type="text"><br><br>
+            <label id="labn" for="nom">nom</label>
+            <input id="it" required="required" class="n" type="text"><br><br>
 
-            <label for="prenom">prénom</label>
-            <input required="required" class="p" type="text"><br><br>
+            <label id="labp" for="prenom">prénom</label>
+            <input id="it" required="required" class="p" type="text"><br><br>
             
             <label for="nom-complet">nom complet</label>
-            <input required="required" class="nc" type="text"  readOnly><br><br>
+            <input  required="required" class="nc" type="text"  readOnly><br><br>
             
             <label for="naissance">date de naissance</label>
             <input required="required" id="date" type="date" min='1923-01-01' max=""><br><br>
@@ -40,11 +40,11 @@
             <input required="required" type="color"><br><br>
 
             <label for="mot-de-passe">mot de passe</label>
-            <input required="required" class="mdp" type="password" id="pass"><br><br>
+            <input required="required" class="mdp" type="password" id="pass" placeholder="Entrez un mot de passe" name="pass"><br><br>
 
-            <label for="confirmation">confirmation mot de passe</label>
-            <input required="required" class="mdp" type="password" id="cpass"><br><br>
-            <div class="registrationFormAlert" style="color:green;" id="CheckPasswordMatch"></div>
+            <label id="labpass" for="confirmation">confirmation mot de passe</label>
+            <input required="required" class="mdp" type="password" id="cpass" placeholder="Confirmez mot de passe" name="confpass"><br><br>
+            <div class="registrationFormAlert" style="color:green;" id="CheckPasswordMatch" ></div>
             
             <label for="afficher-mdp">afficher le mot de passe</label>
             <input class="af" type="checkbox"><br><br>

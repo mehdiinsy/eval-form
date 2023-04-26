@@ -39,28 +39,61 @@ $(".af").click(function(){
 // =============================================================== boutons disabled champs vide (pas bon)
 
 // $(document).ready(function() {
-//     $('.sub').attr('disabled', 'disabled');
+//     $('.sub').attr('disabled', 'true');
  
-//     $('#inp').on('input', function() {
-//         if ($(this).val() !== '') {
+//     $('#it').keyup('input', function() {
+//         if ($(this).val().length > 0) {
 //             $('.sub').removeAttr("disabled");
+//             $("#labn").css("color", "black");
+//             $("#labp").css("color", "black");
 //         }
-//         else {
-//             $('.sub').attr('disabled', 'disabled');
+//         else{
+//             $("#labn").css("color", "red");
+//             $("#labp").css("color", "red");
 //         }
+        
 //     });
 // });
 
-// ================================================================mdp et confirm mdp (pas bon)
+// ================================================================mdp et confirm mdp et bouton disabled si non concordance des mdp
 
-// function checkPasswordMatch() {
-//     var password = $("#pass").val();
-//     var confirmPassword = $("#cpass").val();
-//     if (password != confirmPassword)
-//         $("#CheckPasswordMatch").html("Passwords does not match!");
-//     else
-//         $("#CheckPasswordMatch").html("Passwords match.");
-// }
-// $(document).ready(function () {
-//    $("#txtConfirmPassword").keyup(checkPasswordMatch);
+
+$(document).ready(function () {
+    function checkPasswordMatch() {
+        var password = $("#pass").val();
+        var confirmPassword = $("#cpass").val();
+        if (password != confirmPassword){
+            $("#labpass").css("color", "red");
+            $(".sub").attr('disabled', 'true');
+        }
+    
+            else{
+                $("#labpass").css("color", "lime");
+                $(".sub").removeAttr('disabled');
+    }};
+   $("#cpass").keyup(checkPasswordMatch);
+});
+
+// ======================================================================
+
+// $(document).ready(function() {
+//     $('input').on('keyup', function() {
+//       let empty = false;
+  
+//       $('input').each(function() {
+//         empty = $(this).val().length == 0;
+//       });
+  
+//       if (empty)
+//         $('.actions input').attr('disabled', 'disabled');
+//       else
+//         $('.actions input').attr('disabled', false);
+//     });
+//   });
+
+//   $(document).ready(function() {
+//     if($("#it").val().length == 0){
+//         $(".sub").attr("disabled", "true");
+//     }
 // });
+
